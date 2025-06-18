@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Generate Chat Komship</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="greeting">
+          <h1>Selamat Datang di Generate Chat</h1>
+          <p>
+            Kami mengerti bahwa tugas seorang CSI begitu berat apalagi jika ada
+            kendala seperti pencairan saldo dan layanan komcard yang bermasalah.
+            Kami juga mengerti dan memahami disela-sela kesibukan menahan diri
+            untuk tidak emosi, dan berisiknya jari jemari yang menari diatas
+            keyboard yang lusuh dan berminyak. Berikan kami kesempatan untuk
+            menghadirkan sebuah Website, bukan sekadar alat bantu, tapi sebagai
+            teman seperjuangan
+          </p>
+        </div>
+        <hr />
+        <h2>Silahkan Pilih Shift dan Nama Operator</h2>
+        <div class="pengguna">
+          <div class="pilih-operator">
+            <label for="operator">Nama Operator CSI:</label>
+            <select name="operator" id="operator">
+              <option value="Hanin">Hanin</option>
+              <option value="Steven">Steven</option>
+            </select>
+          </div>
+          <div class="pilih-shift">
+            <label for="shift">Jadwal Shift Kerja:</label>
+            <select name="jadwal" id="shift">
+              <option value="pagi">Pagi</option>
+              <option value="siang">Siang</option>
+              <option value="sore">Sore</option>
+              <option value="malam">Malam</option>
+            </select>
+          </div>
+        </div>
+        <div class="persiapan">
+          <div class="pilih-method">
+            <label for="method">Silahkan Pilih Template: </label>
+            <select name="pilih" id="method">
+              <option value="push">Push Pengiriman</option>
+              <option value="push">Push Return</option>
+              <option value="push">Pengiriman Ulang</option>
+              <option value="push">Laporan POD</option>
+              <option value="push">Pengiriman di Return</option>
+              <option value="push">Bantu Klaim</option>
+            </select>
+          </div>
+
+          <div class="input-resi">
+            <label for="idresi">Silahkan inputkan ID Resi: </label>
+            <div class="resi-container">
+              <input
+                type="text"
+                id="resi"
+                placeholder="Input resi disini"
+                maxlength="25"
+                required
+              />
+              <div class="invalid-popup">
+                <p>❌ Resi Tidak Valid!</p>
+              </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <button>Generate</button>
+            <button>Reset</button>
+          </div>
+        </div>
+         <hr />
+        <div class="hasil">
+          <div class="hasil-generate">
+            <label for="hasil">Hasil Generate:</label>
+            <textarea
+              id="hasil"
+              name="hasil"
+              maxlength="500"
+              placeholder="Hasil akan muncul disini.."
+              readonly
+            ></textarea>
+          </div>
+          <div class="button-copy">
+            <button id="copyBtn">Copy</button>
+            <div class="copy-popup">
+              <p>✅ Yeay! Template Berhasil di Copy</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>&copy; 2025 Website Generate Chat by Eko Asmoro</p>
+      </footer>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
