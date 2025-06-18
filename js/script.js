@@ -1,4 +1,3 @@
-// Ambil elemen DOM
 const shiftSelect = document.getElementById("shift");
 const operatorSelect = document.getElementById("operator");
 const resiInput = document.getElementById("resi");
@@ -13,7 +12,6 @@ const copyBtn = document.getElementById("copyBtn");
 invalidPopup.style.display = "none";
 copyPopup.style.display = "none";
 
-// Kelas utama
 class Main {
   constructor(shift, name, idResi) {
     this.shift = shift;
@@ -63,7 +61,6 @@ Baik kak, untuk resi ${this.idResi}, ${this.name} bantu ajukan klaim ke Tim terk
   }
 }
 
-// Subclass untuk validasi ekspedisi
 class Generate extends Main {
   constructor(shift, name, idResi) {
     super(shift, name, idResi);
@@ -94,7 +91,6 @@ class Generate extends Main {
   }
 }
 
-// Tombol generate
 generateButton.addEventListener("click", () => {
   const shift = shiftSelect.value;
   const name = operatorSelect.value;
@@ -139,7 +135,6 @@ generateButton.addEventListener("click", () => {
   }
 });
 
-// Tombol reset hanya reset metode template
 resetButton.addEventListener("click", () => {
   methodSelect.selectedIndex = 0;
   resiInput.value = "";
@@ -148,7 +143,6 @@ resetButton.addEventListener("click", () => {
   copyPopup.style.display = "none";
 });
 
-// Tombol copy
 copyBtn.addEventListener("click", () => {
   hasilTextarea.select();
   document.execCommand("copy");
