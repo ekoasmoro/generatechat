@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Generate Chat Komship</title>
+    <title>Chat Generator Komship</title>
   </head>
   <body>
     <main>
       <section>
         <div class="greeting">
-          <h1>Selamat Datang di Generate Chat</h1>
+          <div class="judul">
+            <img src="./images/gear.png" alt="gear" />
+            <h1>Selamat Datang di Chat Generator</h1>
+          </div>
           <p>
             Kami mengerti bahwa tugas seorang CSI begitu berat apalagi jika ada
             kendala seperti pencairan saldo dan layanan komcard yang bermasalah.
             Kami juga mengerti dan memahami disela-sela kesibukan menahan diri
-            untuk tidak emosi, dan berisiknya jari jemari yang menari diatas
+            untuk tidak emosi, dan berisiknya jari jemari yang menari di atas
             keyboard yang lusuh dan berminyak. Berikan kami kesempatan untuk
             menghadirkan sebuah Website, bukan sekadar alat bantu, tapi sebagai
-            teman seperjuangan
+            teman seperjuangan 🔥
           </p>
         </div>
+
         <hr />
+
         <h2>Silahkan Pilih Shift dan Nama Operator</h2>
         <div class="pengguna">
           <div class="pilih-operator">
@@ -34,7 +39,7 @@
           </div>
           <div class="pilih-shift">
             <label for="shift">Jadwal Shift Kerja:</label>
-            <select name="jadwal" id="shift">
+            <select name="shift" id="shift">
               <option value="pagi">Pagi</option>
               <option value="siang">Siang</option>
               <option value="sore">Sore</option>
@@ -42,26 +47,28 @@
             </select>
           </div>
         </div>
+
         <div class="persiapan">
           <div class="pilih-method">
             <label for="method">Silahkan Pilih Template: </label>
-            <select name="pilih" id="method">
-              <option value="push">Push Pengiriman</option>
-              <option value="push">Push Return</option>
-              <option value="push">Pengiriman Ulang</option>
-              <option value="push">Laporan POD</option>
-              <option value="push">Pengiriman di Return</option>
-              <option value="push">Bantu Klaim</option>
+            <select name="method" id="method">
+              <option value="push-pengiriman">Push Pengiriman</option>
+              <option value="push-return">Push Return</option>
+              <option value="pengiriman-ulang">Pengiriman Ulang</option>
+              <option value="laporan-pod">Laporan POD</option>
+              <option value="pengiriman-di-return">Pengiriman di Return</option>
+              <option value="bantu-klaim">Bantu Klaim</option>
             </select>
           </div>
 
           <div class="input-resi">
-            <label for="idresi">Silahkan inputkan ID Resi: </label>
+            <label for="resi">Silahkan inputkan ID Resi: </label>
             <div class="resi-container">
               <input
                 type="text"
                 id="resi"
-                placeholder="Input resi disini"
+                name="resi"
+                placeholder="Input resi disini.."
                 maxlength="25"
                 required
               />
@@ -70,15 +77,18 @@
               </div>
             </div>
           </div>
+
           <div class="button-group">
-            <button>Generate</button>
-            <button>Reset</button>
+            <button id="generateBtn">Generate</button>
+            <button id="resetBtn">Reset</button>
           </div>
         </div>
-         <hr />
+
+        <hr />
+
         <div class="hasil">
           <div class="hasil-generate">
-            <label for="hasil">Hasil Generate:</label>
+            <label for="hasil">Hasil:</label>
             <textarea
               id="hasil"
               name="hasil"
@@ -88,13 +98,14 @@
             ></textarea>
           </div>
           <div class="button-copy">
-            <button id="copyBtn">Copy</button>
-            <div class="copy-popup">
+            <button id="copyBtn" aria-label="Copy Template">Copy</button>
+            <div class="copy-popup" id="copyPopup">
               <p>✅ Yeay! Template Berhasil di Copy</p>
             </div>
           </div>
         </div>
       </section>
+
       <footer>
         <p>&copy; 2025 Website Generate Chat by Eko Asmoro</p>
       </footer>

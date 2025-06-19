@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
+:root {
+  --primary-color: #FFFBF5;
+  --secondary-color: #F7EFE5;
+  --others-color1: #C3ACD0;
+  --others-color2: #674188;
+  --hover-color: #503374;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +16,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: white;
+  background-color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +25,7 @@ body {
 main {
   max-width: 800px;
   margin: 20px 50px;
-  background-color: #f4f4f4;
+  background-color: var(--primary-color);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -30,46 +38,59 @@ section {
   padding: 10px 20px;
 }
 
-.greeting h1 {
+.judul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.judul h1 {
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  margin: 30px;
+  margin: 20px 10px;
+}
+
+.judul img {
+  width: 50px;
 }
 
 .greeting p {
   font-size: 1rem;
   text-align: justify;
+  line-height: 1.6;
 }
 
 h2 {
   font-size: 1.2rem;
+  margin-top: 10px;
 }
+
 .pengguna {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
+  align-items: center;
 }
 
 .pengguna label {
+  margin-right: 10px;
   font-size: 1rem;
 }
 
-.pengguna #shift {
-  width: 100px;
-  height: 25px;
+.pengguna select {
   border-radius: 6px;
   padding: 0 10px;
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
+  height: 30px;
 }
 
-.pengguna #operator {
+#operator {
   width: 120px;
-  height: 25px;
-  border-radius: 6px;
-  padding: 0 10px;
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+}
+
+#shift {
+  width: 100px;
 }
 
 .persiapan {
@@ -106,26 +127,35 @@ h2 {
 .persiapan input {
   width: 300px;
   height: 35px;
+  font-family: monospace;
   padding: 2px 7px;
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.invalid-popup {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.invalid-popup.active {
+  display: block;
 }
 
 .persiapan .button-group {
   display: flex;
-  margin: 10px 0;
-  margin-bottom: 10px;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .button-group button {
   padding: 5px 10px;
   border: none;
   border-radius: 6px;
-  background-color: #007bff;
+  background-color: var(--others-color2);
   color: white;
   cursor: pointer;
   font-size: 1rem;
@@ -133,32 +163,32 @@ h2 {
 }
 
 .button-group button:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-color);
 }
 
 .hasil-generate label {
-    font-size: 1rem;
-    margin: 10px 0;
-    font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin: 10px 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .hasil textarea {
   resize: none;
   width: 100%;
-  padding: 10px 10px;
+  padding: 10px;
   height: 150px;
+  font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
 }
 
 .hasil button {
-  margin: 5px 0;
   padding: 5px 10px;
   border: none;
   border-radius: 6px;
-  background-color: #007bff;
+  background-color: var(--others-color2);
   color: white;
   cursor: pointer;
   font-size: 1rem;
@@ -167,14 +197,32 @@ h2 {
 }
 
 .hasil button:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-color);
 }
 
 .button-copy {
+  margin-top: 10px;
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
 }
+
+.copy-popup {
+  
+  display: none;
+  font-size: 0.9rem;
+  color: green;
+  background-color: #e9ffe9;
+  border: 1px solid green;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.copy-popup.active {
+  display: block;
+}
+
 
 footer {
   text-align: center;
@@ -182,7 +230,6 @@ footer {
   font-size: 0.8rem;
   color: #666;
 }
-
 
 /* === RESPONSIVE LAYOUT === */
 @media (max-width: 768px) {
@@ -195,10 +242,7 @@ footer {
     gap: 10px;
   }
 
-  .persiapan input {
-    width: 100%;
-  }
-
+  .persiapan input,
   .persiapan select {
     width: 100%;
   }
@@ -207,7 +251,8 @@ footer {
     flex-direction: column;
   }
 
-  .hasil button {
+  .hasil button,
+  .button-copy button {
     width: 100%;
   }
 
@@ -227,7 +272,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .greeting h1 {
+  .judul h1 {
     font-size: 1.5rem;
   }
 
